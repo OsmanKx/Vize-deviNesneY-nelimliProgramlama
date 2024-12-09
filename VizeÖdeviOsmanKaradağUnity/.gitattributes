@@ -1,0 +1,20 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+*.bat text eol=crlf
+*.sh text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.cs text eol=crlf
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+git add .gitattributes
+git commit -m "Add .gitattributes for line endings"
+git push
+
+git config --global core.autocrlf true
+
+git add --renormalize .
+git commit -m "Normalize line endings"
+git push
